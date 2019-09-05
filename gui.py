@@ -14,6 +14,7 @@ def array_to_image(file_path):
     return image
 
 
+# popup windows
 class ChildWindow(Toplevel):
     images = [[array_to_image('./icon/%d.bin' % i) for i in range(1, 5)],
               [array_to_image('./icon/%d.bin' % -1)]]
@@ -75,6 +76,7 @@ class ChildWindow(Toplevel):
         return
 
 
+# main window
 class APP(Frame):
     def __init__(self, master=None):
         Frame.__init__(self, master)
@@ -90,7 +92,7 @@ class APP(Frame):
         self.img = Label(self, image=render, width='100', height='100')
         self.img.image = render
         self.img.pack(expand=YES, fill=BOTH)
-        self.label = Label(self, text='曹琪琪会有男朋友吗？', font=('微软雅黑', 16))
+        self.label = Label(self, text='cqq会有男朋友吗？', font=('微软雅黑', 16))
         self.label.pack(pady=20, fill=X, padx=10)
         self.yes_button = Button(self, text='不会', width='10', height='1', command=self.yes_command)
         self.yes_button.pack(side='left', expand=True, padx=10, pady=10)
